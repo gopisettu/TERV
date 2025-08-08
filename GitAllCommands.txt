@@ -1,0 +1,140 @@
+1. Git Configuration
+bash
+Copy
+Edit
+git config --global user.name "Your Name"           # Set username
+git config --global user.email "you@example.com"    # Set email
+git config --global core.editor "code --wait"       # Set VS Code as editor
+git config --list                                   # Show all config
+2. Create / Clone Repository
+bash
+Copy
+Edit
+git init                                            # Initialize a new repository in current folder
+git clone <url>                                     # Clone a repository from GitHub
+git clone <url> <foldername>                        # Clone into a specific folder
+3. Check Status & Logs
+bash
+Copy
+Edit
+git status                                          # Show changed files
+git log                                             # Show commit history
+git log --oneline                                   # Compact history
+git log --graph --oneline --all                     # Visual branch history
+git diff                                            # Show unstaged changes
+git diff --staged                                   # Show staged changes
+4. Add & Commit Changes
+bash
+Copy
+Edit
+git add file.txt                                    # Stage a specific file
+git add .                                           # Stage all changes
+git commit -m "Message"                             # Commit with message
+git commit -am "Message"                            # Stage & commit tracked files
+git commit --amend -m "New Message"                 # Change last commit message
+5. Branching
+bash
+Copy
+Edit
+git branch                                          # List branches
+git branch new-branch                               # Create new branch
+git checkout new-branch                             # Switch to branch
+git checkout -b new-branch                          # Create & switch
+git branch -d branch-name                           # Delete local branch
+git branch -D branch-name                           # Force delete branch
+git branch -m old new                               # Rename branch
+6. Merging & Rebasing
+bash
+Copy
+Edit
+git merge branch-name                               # Merge into current branch
+git rebase branch-name                              # Reapply commits on top of another branch
+git merge --abort                                   # Cancel merge
+git rebase --abort                                  # Cancel rebase
+7. Remote Repository (GitHub)
+bash
+Copy
+Edit
+git remote -v                                       # Show remote URLs
+git remote add origin <url>                         # Add remote
+git remote rename old new                           # Rename remote
+git remote remove origin                            # Remove remote
+git fetch origin                                    # Get changes without merging
+git pull origin master                              # Fetch + merge from remote
+git push origin master                              # Push to GitHub
+git push -u origin master                           # Push & set upstream
+8. Stashing
+bash
+Copy
+Edit
+git stash                                           # Save changes temporarily
+git stash list                                      # List stashes
+git stash apply stash@{0}                           # Apply stash
+git stash drop stash@{0}                            # Remove stash
+git stash pop                                       # Apply & remove latest stash
+9. Undoing Changes
+bash
+Copy
+Edit
+git restore file.txt                                # Discard changes in file
+git reset HEAD file.txt                             # Unstage file
+git reset --soft HEAD~1                             # Undo last commit, keep changes staged
+git reset --mixed HEAD~1                            # Undo last commit, keep changes unstaged
+git reset --hard HEAD~1                             # Undo last commit completely
+git revert <commit-id>                              # Create a commit that reverses changes
+10. Tagging
+bash
+Copy
+Edit
+git tag v1.0                                        # Create lightweight tag
+git tag -a v1.0 -m "Version 1.0"                    # Annotated tag
+git tag                                             # List tags
+git push origin v1.0                                # Push specific tag
+git push origin --tags                              # Push all tags
+11. GitHub Specific
+bash
+Copy
+Edit
+# Create a new repo on GitHub (done via website)
+git push -u origin main                             # First push to GitHub
+
+# Fork a repo (done via GitHub website)
+# Create a pull request (done via GitHub website)
+12. Clean & Maintenance
+bash
+Copy
+Edit
+git clean -n                                        # Show untracked files to delete
+git clean -f                                        # Delete untracked files
+git gc                                              # Garbage collect
+13. Advanced / Extras
+bash
+Copy
+Edit
+git cherry-pick <commit-id>                         # Apply specific commit from another branch
+git reflog                                          # Show all branch movements
+git blame file.txt                                  # Show who changed each line
+git shortlog -sn                                    # Show commits per author
+git bisect start                                    # Start binary search for bugs
+git bisect bad                                      # Mark current commit as bad
+git bisect good <commit-id>                         # Mark commit as good
+✅ Pro Tip for GitHub:
+If you want to push an existing local repo to GitHub:
+
+bash
+Copy
+Edit
+git remote add origin https://github.com/username/repo.git
+git branch -M main
+git push -u origin main
+If you want, I can prepare a color-coded PDF Git & GitHub Command Sheet with diagrams of branch flows and pull/push cycles so you can print and use during training. That way you won’t have to memorize everything in raw text form.
+
+
+
+
+
+
+
+
+
+Ask ChatGPT
